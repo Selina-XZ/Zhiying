@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>知应 · 正在返回首页</title>
+<link rel="icon" href="data:,">
+<style>body{margin:0;display:grid;place-items:center;min-height:100vh;background:linear-gradient(135deg,#FBF4E8,#E8B6A8);color:#3F3833;font:20px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:620px;padding:32px;text-align:center}a{color:#6A382F;font-weight:800}</style>
+</head>
+<body>
+<main><h1>数字人已经放到老人端首页</h1><p>正在返回“知应”首页，并保留您要查看的事项。</p><p><a id="fallback" href="/">如果没有自动返回，请点击这里</a></p></main>
+<script>
+const target=new URL('/',location.origin);
+const item=new URLSearchParams(location.search).get('item');
+if(item)target.searchParams.set('item',item);
+document.getElementById('fallback').href=target.href;
+location.replace(target.href);
+</script>
+</body>
+</html>
